@@ -1,0 +1,278 @@
+@import url("https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css");
+body{
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(
+        315deg,
+        rgba(101,0,94,1)3%,
+        rgba(60, 132, 206, 1)38%,
+        rgba(48, 238, 226, 1)68%,
+        rgba(255, 25, 25, 1)98%
+    );
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    
+    
+}
+@keyframes gradient{
+    0%{
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 0%;
+    }
+}
+
+.wave{
+    background: rgb(255 255 255/25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0,0,0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2){
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3){
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+@keyframes wave{
+    2%{
+        transform: translateX(1);}
+    25%{
+        transform: translateX(-25%);}
+    50%{transform: translateX(-50%);}
+    75%{transform: translateX(-25%);}
+    100%{transform: translateX(1);}
+}
+
+*{
+    font-family: "Robot", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+.flexbox{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search{
+    margin: 20px;
+}
+
+
+.search >h1{
+    font-size: 2rem;
+    background: linear-gradient(to right, #fff 20%,
+            #65C7F7 40%, #0052D4 60%, #fff 80%);
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 2s linear infinite;
+}
+@keyframes animate{
+    to{
+        background-position: 200%center;
+    }
+}
+
+.search > div{
+    display: inline-block;
+    position: relative;
+}
+
+.search >div::after{
+    content: "";
+    background: black;
+    width: 4px;
+    height: 20px;
+    position: absolute;
+    top: 40px;
+    right: 2px;
+    transform: rotate(135deg);
+}
+
+.search >div >input{
+    color: black;
+    font-size: 16px;
+    background: transparent;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    border: solid 3px black;
+    outline: none;
+    border-radius: 35px;
+    transition: width 0.5s;
+}
+
+.search > div > input::placeholder{
+
+    color: black;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+}
+
+.search{
+    display: flex;
+    margin-top: -30%;
+}
+
+.search >div >input:focus::placeholder{
+    opacity: 1;
+}
+.search >div>input:focus,
+.search >div >input:not(:placeholder-shown){
+    width: 250px;
+}
+
+.tab-bar{
+    display: flex;
+    flex-wrap: nowrap;
+    bottom: 0;
+    width: 550px;
+    height: 70px;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding-inline: 30px;
+    box-sizing: border-box;
+    margin-top: 1%;
+    margin-left: 1%;
+    border-radius: 20px;
+}
+.tab-bar > div{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+.tab-bar > div input[type="radio"]{
+    display: none;
+}
+.tab-bar > div a {
+    color: rgb(150, 150, 150);
+    text-decoration: none;
+}
+
+.tab-bar >div label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: .8em;
+    transition: 3.s;
+    width: fit-content;
+}
+
+.tab-bar > div i{
+    font-size: 1.5em;
+    height: 22px;
+}
+
+.tab-bar > div input[type="radio"]:checked + a label{
+    color:#5549F1;
+    
+}
+
+.card{
+    width: 200px;
+    height: 100px;
+    background-color: transparent;
+    border: 5px solid;
+    border-image: linear-gradient(
+        #ff512f,
+        #dd2476,
+        #1c64ff) 1;
+        animation: rotate 2.5s ease-in infinite;
+}
+
+@keyframes rotate{
+    50%{
+        border-image: linear-gradient(360deg,#ff512f,#dd2476,#1c64ff)1;
+    }
+}
+figcaption{
+    color: white;
+    font-size: 20px;
+}
+.card{
+    display: flex;
+    margin: auto;
+    margin-top: 5%;
+}
+.button{
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 24px;
+    color: #000000;
+    border: 1px solid #000000;
+    overflow: hidden;position: relative;
+    transition: color .5s .25s;
+
+}
+
+.button::before,
+.button::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #edecec;
+    z-index: -1;
+    transform: scaleX(0);
+    transition: transform .5s cubic-bezier(.785, .135, .15, .86);    
+}
+
+.button::before{
+    left: 0;
+    transform-origin: left;
+}
+
+.button::after{
+    right: 0;
+    transform-origin: right;
+}
+
+.button:hover::before,
+.button:hover::after{
+    transform: scaleX(1);
+}
+
+.button:hover{
+    color: #c071d2;
+    transition-delay: .5s;
+}
+.button{
+    display: flex;
+    margin-left: 48%;
+    margin-top: -38%;
+    width: 50px;
+}
